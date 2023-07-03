@@ -1,6 +1,79 @@
 import os
 import json
 
+# You must set the path of the following 
+# JSON files to use this script.
+
+# The JSON struture
+
+## MEJSON
+## {
+##   "myself" : "name",
+##   "city" : "city",
+##   "phone" : "number",
+##   "mail" : "email",
+##   "summary" : "a brief summary"
+## }
+
+## EXPERIENCEJSON
+## [ 
+##   {
+##      "place": "business name",
+##      "job": "position",
+##      "start": "YYYY-MM-01",
+##      "end": "YYYY-MM-01",
+##      "where": "city/country",
+##      "expertise": [
+## 	    	"hosting",
+## 	    	"server administration",
+## 	    	"linux",
+## 	    	"ssh"
+## 		]
+##   }, ...]
+
+## EDUCATIONJSON
+## [
+##   {
+##      "university": "name",
+##      "city": "city",
+##      "degree": "Degree name",
+##      "course": "what course",
+##      "start": "YYYY-MM-01",
+##      "end": "YYYY-MM-01"
+##   }, ...]
+
+## COURSEJSON
+## [
+##   {
+##      "provider": "coursera",
+##      "name": "fundamentos de la escritura",
+##      "date": "2021-05-01",
+##      "id": "course id",
+##      "specialization": null,
+##      "order": null,
+##      "university": "university name",
+##      "link": "link of certificate",
+##      "expertise": [
+##		  ...
+##      ]
+##   }, ...]
+
+## SKILLJSON
+## { 
+##   "skills": [
+##     "excel", "linux", "bash", "data analysis",
+##     "r", "python", "pandas", "vps servers",
+##     "ssh", "nginx", "sqlite3", "microsoft office",
+##     "inferential statistics", "data modeling", "math",
+##     "statistics", "data science", "java script",
+##     "retrieve data", "processing data", "html",
+##     "web scraping", "analytical thinking", "problem-solving",
+##     "critical thinking", "time management", "public speaking",
+##     "attention to detail", "good listening", "to lead others",
+##     "to be able to explain certain topics clearly"
+##   ]
+## }
+
 about = os.environ["MEJSON"]
 experience = os.environ["EXPERIENCEJSON"]
 education = os.environ["EDUCATIONJSON"]
@@ -48,7 +121,8 @@ def education_info(education):
 		else:
 			education_info.append("{}, {} - {}\n{}\n".format(name, start, end, course)) 
 
-	education_info = "\n".join(education_info)
+
+	education_info = "\n\n## Education\n\n***\n\n" + "\n".join(education_info)
 	return education_info
 
 def experience_info(experience):
@@ -63,8 +137,8 @@ def experience_info(experience):
 			end = DateMY(i["end"])
 		where = i["where"].capitalize()
 		skills =  "".join(["- "+j.capitalize() +"\n" for j in i["expertise"]])
-		experience_list.append("{}\n{}\n{}\n{} - {}\nRelevant Skills:\n{}".format(job, place, where, start, end, skills))
-	experience_list = "\n".join(experience_list)
+		experience_list.append("{}\n{}\n{}\n{} - {}\nRelevant Skills:\n{}\n".format(job, place, where, start, end, skills))
+	experience_list = "".join(experience_list)
 	return experience_list
 
 def courses_info(courses):
@@ -77,7 +151,7 @@ def courses_info(courses):
 		skills = "Relevant skills: " + ", ".join(e.capitalize() for e in i["expertise"])
 		course_info.append("{}\n{}, {}\n{}\n\n".format(name, university, date, skills))
 
-	course_info = "\n".join(course_info)
+	course_info = "## Certifications\n\n***\n\n" + "\n".join(course_info)
 	return course_info
 
 def skills_info(skills):

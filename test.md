@@ -5,7 +5,13 @@ Mexico City | +52 5562194933 | hector.hdez.08@gmail.com
 
 ***
 
-Analytical professional with knowledge generating and analyzing data reports for management. Strategic mindset that focuses on problem solving tasks and maintaining priorities on strict deadlines.Universidad Autónoma Metropolitana, May 2015 - September 2023
+Analytical professional with knowledge generating and analyzing data reports for management. Strategic mindset that focuses on problem solving tasks and maintaining priorities on strict deadlines.
+
+## Education
+
+***
+
+Universidad Autónoma Metropolitana, May 2015 - September 2023
 Bachelor's degree in Economics
 
 Universidad Autónoma De Chiapas, August 2012 - August 2014
@@ -50,6 +56,11 @@ Relevant Skills:
 - Problem-solving
 - Stress management in difficult situations
 - Use of tools for processing and collection data
+
+## Certifications
+
+***
+
 **Fundamentos de la escritura**
 _Tecnológico de monterrey_, May 2021
 Relevant skills: Normas ortográficas, Redactar de forma correcta, Planificar textos, Utilizar estrategias de cohesión y adecuación
